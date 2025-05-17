@@ -1,0 +1,56 @@
+This is a  program  which was designed as part of my "30-Day Python Challenge." 
+
+Classes and Inheritance:
+1. User Class:
+   - The User class is a base class representing a generic user with attributes name and email.
+   - It has a method show_info() that displays the user's name and email.
+
+2. Admin Class:
+   - The Admin class inherits from the User class, means it can access anything from parent class.
+   - It adds an additional attribute privileges, which is a list of strings representing the admin's privileges.
+   - The method show_privileges() displays the admin's privileges.
+
+3. Customer Class:
+   - The Customer class also inherits from the User class.
+   - It introduces additional attributes: balance for the customer's account balance and cart for storing items added to the cart.
+   - Methods include:
+     - add_to_cart(item): Adds an item to the customer's cart and displays a confirmation message.
+     - show_cart(): Displays the contents of the customer's cart.
+     - checkout(): This checkout process by printing the number of items in cart and the customer's balance.
+
+4. LoyaltyProgram Class:
+   - This class is designed for use in multiple inheritance scenarios.
+   - It contains a method get_loyalty_status(points) that returns a loyalty status based on the provided points.
+
+5. PremiumCustomer Class:
+   - This class demonstrates multiple inheritance by inheriting from both Customer and LoyaltyProgram.
+   - It adds an attribute points to track loyalty points.
+   - The method show_status() uses the get_loyalty_status() method from LoyaltyProgram to determine and print the customer's loyalty status.
+
+main():
+  - Admin Demo: Creates an instance of Admin class, shows its info, and lists its privileges.
+  - Customer Demo: Creates an instance of Customer class, adds items to its cart, shows the cart, and checkout the customer.
+  - PremiumCustomer Demo: Creates an instance of PremiumCustomer class, shows its info, cart, and loyalty status.
+
+Execution:
+- The script is set up to run the main() function if it is executed directly (if __name__ == "__main__":), showcasing how inheritance 
+  can be used to build a user system with different roles and functionalities.
+
+What I've learnt:
+- Inheritance is a feature and one of the main pillar in object-oriented programming(OOP) where a class (child class) can inherit 
+  attributes/Properties/Characteristics and methods/Behaviour from another class (parent class).
+- This helps us for code reusability and makes programs easier to manage.
+- Parent class aka Base class, Super class.
+- Child class aka Derived class, Sub class.
+- A child class can have it's own methods, attributes and can override from parent also if needed (This mades code reusability).
+- The '__init__()': This is a constructor method in python classes where it will be called automatically when an object/instance created.
+- The 'super()': This is a built-in method in python which is used to call the methods from the parent class to reuse them in child class.
+  It is mostly used inside the __init__() to call parents __init__().
+- Method overriding: A child class can have a method with the same name that parent class method has, but when we calls the child method will run. 
+  But still if we want to run parent class method then use super() as 'super().methodName()' to run parent method from child class.
+- Types of inheritance:
+      - Single inheritance (one child, one parent)
+      - Multiple inheritance (child class inherits from multiple parents)
+      - Multilevel inheritance (child inherits from parent, which inherits from another parent)
+      - Hierarchical inheritance (multiple children from one parent)
+      - Hybrid inheritance (combination of multiple types)
